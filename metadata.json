@@ -1,0 +1,6 @@
+{
+  "name": "Student Part-Time Job Finder",
+  "description": "A high-fidelity full-stack web application for students to search, filter, and map local part-time gigs like catering and delivery, featuring an AI-powered cover letter builder and class schedule matcher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
