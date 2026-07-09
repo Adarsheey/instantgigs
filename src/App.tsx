@@ -990,7 +990,7 @@ export default function App() {
                           filteredJobs.map((job) => {
                             const isSelected = selectedJobId === job.id;
                             const hasConflict = checkScheduleOverlap(job.requiredSchedule, userProfile.busySchedule);
-                            const alreadyApplied = applications.some(app => app.jobId === job.id);
+                            const alreadyApplied = studentApplications.some(app => app.jobId === job.id);
                             
                             return (
                               <div
@@ -1152,11 +1152,11 @@ export default function App() {
 
                             {/* AI Cover Pitch Compiler Container */}
                             <AIPitchBuilder 
-                              job={activeJob}
-                              userProfile={userProfile}
-                              onApplyWithPitch={handleApply}
-                              isApplied={applications.some(app => app.jobId === activeJob.id)}
-                            />
+  job={activeJob}
+  userProfile={userProfile}
+  onApplyWithPitch={handleApply}
+  isApplied={studentApplications.some(app => app.jobId === activeJob.id)}
+/>
 
                           </div>
                         ) : (
