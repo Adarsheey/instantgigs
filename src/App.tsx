@@ -328,9 +328,13 @@ export default function App() {
       const hasConflict = checkScheduleOverlap(job.requiredSchedule, userProfile.busySchedule);
       const matchesSchedule = !onlyMatchingSchedule || !hasConflict;
 
-      return matchesSearch && matchesCategory && matchesPay && matchesDistance && matchesDistrict && matchesSchedule;
+            // 6. Gigs with spots remaining
+      const hasSpots = job.spotsRemaining > 0;
+
+      return matchesSearch && matchesCategory && matchesPay && matchesDistance && matchesDistrict && matchesSchedule && hasSpots;
     });
   }, [jobsWithCurrentDistances, searchTerm, selectedCategories, minPay, maxDistance, selectedDistrict, onlyMatchingSchedule, userProfile.busySchedule]);
+
 
   // Active Job Details
   const activeJob = useMemo(() => {
